@@ -1,6 +1,6 @@
-command: "ESC=`printf \"\e\"`; ps -A -o %cpu | awk '{s+=$1} END {printf(\"%.2f\",s/8);}'"
+command: "ESC=$(printf \"\e\"); ps -A -o %cpu | awk '{s+=$1} END {a=sprintf(\"%.2f\", s/4); print a \"%\"}'"
 
-refreshFrequency: 2000 # ms
+refreshFrequency: 2000
 
 render: (output) ->
   """
@@ -18,9 +18,11 @@ update: (output, el) ->
     $icon.addClass("fa fa-bar-chart")
 
 style: """
+  font-family: Lucida Console, Monaco, monospace
   -webkit-font-smoothing: antialiased
-  color: #d5c4a1
-  font: 10px Input
-  right: 265px
-  top: 6px
+  text-overflow: ellipsis
+  color: #d3d3d3
+  font: 13px Input
+  right: 240px
+  top: 3px
 """

@@ -1,21 +1,26 @@
-command: "ESC=$(printf \"\e\"); ps -A -o %mem | awk '{s+=$1} END {a=sprintf(\"%.0f\", s); print a \"%\"}'"
+command: "blueutil status |awk '{print $2}'"
 
-refreshFrequency: 5000 # ms
+refreshFrequency: 10000
 
 render: (output) ->
   """
   <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
-  <div class="mem"
+  <div class="bluetooth"
     <span></span>
     <span class="icon"></span>
   </div>
   """
 
 update: (output, el) ->
-    $(".mem span:first-child", el).text("  #{output}")
-    $icon = $(".mem span.icon", el)
+    $icon = $(".bluetooth span.icon", el)
     $icon.removeClass().addClass("icon")
-    $icon.addClass("fa fa-pie-chart")
+    $icon.addClass("fa #{@icon(output)}")
+
+icon: (output) ->
+    return if output == "off\n"
+        "fa-times"
+    else
+        "fa-bluetooth"
 
 style: """
   font-family: Lucida Console, Monaco, monospace
@@ -23,6 +28,6 @@ style: """
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 310px
-  top: 3px
+  right: 30px
+  bottom: 3px
 """

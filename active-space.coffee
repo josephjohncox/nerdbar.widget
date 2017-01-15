@@ -1,6 +1,6 @@
 command: "/usr/local/bin/kwmc query space active name"
 
-refreshFrequency: 1000 # ms
+refreshFrequency: 500
 
 render: (output) ->
   """
@@ -17,29 +17,35 @@ update: (output, el) ->
     $icon.removeClass().addClass("icon")
     $icon.addClass("fa #{@icon(output)}")
 
-icon: (status) =>
-    return if status.substring(0, 4) == "main"
-        "fa-home"
-    else if status.substring(0, 3) == "web"
-        "fa-safari"
-    else if status.substring(0, 3) == "rnd"
-        "fa-random"
-    else if status.substring(0, 5) == "games"
-        "fa-gamepad"
-    else if status.substring(0, 4) == "chat"
+icon: (output) =>
+    return if output == "terminal\n"
+        "fa-terminal"
+    else if output == "crisidev_irssi\n"
+        "fa-commenting"
+    else if output == "crisidev_web\n"
+        "fa-firefox"
+    else if output == "amzn_irssi\n"
+        "fa-amazon"
+    else if output == "amzn_web\n"
+        "fa-firefox"
+    else if output == "email\n"
+        "fa-envelope"
+    else if output == "calendar\n"
+        "fa-calendar"
+    else if output == "biba\n"
         "fa-comments"
     else
-        "fa-times"
+        "fa-superpowers"
 
 style: """
+  font-family: Lucida Console, Monaco, monospace
   -webkit-font-smoothing: antialiased
-  text-align: right
-  color: #d5c4a1
-  font: 10px Input
-  height: 16px
-  overflow: hidden
   text-overflow: ellipsis
-  right: 320px
-  top: 6px
-  width: 50%
+  color: #d3d3d3
+  font: 13px Input
+  height: 16px
+  left: 10px
+  overflow: hidden
+  top: 3px
+  width: auto
 """

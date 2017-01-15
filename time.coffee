@@ -1,6 +1,6 @@
-command: "date +\"%H:%M\""
+command: "date +\"%H:%M:%S\""
 
-refreshFrequency: 10000 # ms
+refreshFrequency: 1000 # ms
 
 render: (output) ->
   """
@@ -18,9 +18,12 @@ update: (output, el) ->
     $icon.addClass("fa fa-clock-o")
 
 style: """
+  font-family: Lucida Console, Monaco, monospace
   -webkit-font-smoothing: antialiased
-  color: #d5c4a1
-  font: 10px Input
+  text-overflow: ellipsis
+  color: #d3d3d3
+  font: 13px Input
+  font-weight: Bold
   right: 10px
-  top: 6px
+  top: 3px
 """

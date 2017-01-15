@@ -1,6 +1,6 @@
 command: "date +\"%a %d %b\""
 
-refreshFrequency: 10000
+refreshFrequency: 3600000 # 1h
 
 render: (output) ->
   """
@@ -18,9 +18,11 @@ update: (output, el) ->
     $icon.addClass("fa fa-calendar")
 
 style: """
+  font-family: Lucida Console, Monaco, monospace
   -webkit-font-smoothing: antialiased
-  color: #d5c4a1
-  font: 10px Input
-  right: 70px
-  top: 6px
+  text-overflow: ellipsis
+  color: #d3d3d3
+  font: 13px Input
+  right: 90px
+  top: 3px
 """

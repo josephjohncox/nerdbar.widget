@@ -1,6 +1,6 @@
 command: "echo $(/usr/local/bin/kwmc query space active tag)"
 
-refreshFrequency: 1000 # ms
+refreshFrequency: 500
 
 render: (output) ->
   """
@@ -15,16 +15,18 @@ update: (output, el) ->
     $(".foc span:first-child", el).text("  #{output}")
     $icon = $(".foc span.icon", el)
     $icon.removeClass().addClass("icon")
-    $icon.addClass("fa fa-bars")
+    $icon.addClass("fa fa-bullseye")
 
 style: """
+  position: absolute
+  text-align: center
+  font-family: Lucida Console, Monaco, monospace
   -webkit-font-smoothing: antialiased
-  color: #d5c4a1
-  font: 10px Input
+  color: #d3d3d3
+  font: 13px Input
   height: 16px
-  left: 10px
   overflow: hidden
   text-overflow: ellipsis
-  top: 6px
-  width: auto
+  bottom: 3px
+  width: 100%
 """

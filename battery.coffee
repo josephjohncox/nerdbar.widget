@@ -1,6 +1,6 @@
-command: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1 -d';'"
+command: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1,2 -d';' |sed 's/%;//'"
 
-refreshFrequency: 15000 # ms
+refreshFrequency: 60000
 
 render: (output) ->
   """
@@ -13,27 +13,35 @@ render: (output) ->
 
 update: (output, el) ->
     bat = parseInt(output)
-    $(".battery span:first-child", el).text("  #{output}")
+    $(".battery span:first-child", el).text("  #{@display(output)}%")
     $icon = $(".battery span.icon", el)
     $icon.removeClass().addClass("icon")
-    $icon.addClass("fa #{@icon(bat)}")
+    $icon.addClass("fa #{@icon(output)}")
+
+display: (output) ->
+    split = output.split ' '
+    return split[0]
 
 icon: (output) =>
-  return if output > 90
+  split = output.split ' '
+  charge = split[0]
+  return if charge > 90
     "fa-battery-full"
-  else if output > 70
+  else if charge > 70
     "fa-battery-three-quarters"
-  else if output > 40
+  else if charge > 40
     "fa-battery-half"
-  else if output > 20
+  else if charge > 20
     "fa-battery-quarter"
   else
     "fa-battery-empty"
 
 style: """
+  font-family: Lucida Console, Monaco, monospace
   -webkit-font-smoothing: antialiased
-  font: 9px Input
-  top: 7px
-  right: 160px
-  color: #d5c4a1
+  text-overflow: ellipsis
+  font: 13px Input
+  top: 3px
+  right: 180px
+  color: #d3d3d3
 """
