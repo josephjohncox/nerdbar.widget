@@ -33,6 +33,6 @@ style: """
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 438px
+  right: 440px
   top: 3px
 """
