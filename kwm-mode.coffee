@@ -1,4 +1,4 @@
-command: "/Users/matbigoi/.kwm/scripts/kwm-profile"
+command: "$HOME/.kwm/scripts/kwm-profile"
 
 refreshFrequency: 5000 # ms
 

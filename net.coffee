@@ -1,4 +1,4 @@
-command: "/Users/matbigoi/.kwm/scripts/net-stats"
+command: "$HOME/.kwm/scripts/net-stats"
 
 refreshFrequency: 3000 # ms
 
@@ -33,6 +33,6 @@ style: """
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 440px
+  right: 450px
   top: 3px
 """

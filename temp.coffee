@@ -1,4 +1,4 @@
-command: "sysctl machdep.xcpm.cpu_thermal_level | awk '{print $2}'"
+command: "$HOME/.kwm/scripts/osx-cpu-temp"
 
 refreshFrequency: 5000 # ms
 

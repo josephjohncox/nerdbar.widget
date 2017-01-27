@@ -42,6 +42,6 @@ style: """
   text-overflow: ellipsis
   font: 13px Input
   top: 3px
-  right: 180px
+  right: 174px
   color: #d3d3d3
 """
