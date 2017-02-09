@@ -4,7 +4,6 @@ refreshFrequency: 5000 # ms
 
 render: (output) ->
   """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="vol">
     <span></span>
     <span class="icon"></span>
@@ -35,6 +34,6 @@ style: """
   color: #d3d3d3
   font: 13px Input
   font-weight: Bold
-  right: 10px
-  bottom: 3px
+  right: 233px
+  top: 3px
 """

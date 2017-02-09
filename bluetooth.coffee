@@ -4,7 +4,6 @@ refreshFrequency: 10000
 
 render: (output) ->
   """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="bluetooth"
     <span></span>
     <span class="icon"></span>
@@ -28,6 +27,6 @@ style: """
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 30px
-  bottom: 3px
+  right: 270px
+  top: 3px
 """

@@ -4,7 +4,6 @@ refreshFrequency: 2000
 
 render: (output) ->
   """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="cpu"
     <span></span>
     <span class="icon"></span>
@@ -23,6 +22,6 @@ style: """
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 236px
+  right: 447px
   top: 3px
 """

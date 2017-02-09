@@ -4,7 +4,6 @@ refreshFrequency: 60000
 
 render: (output) ->
   """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="battery"
     <span></span>
     <span class="icon"></span>
@@ -20,7 +19,10 @@ update: (output, el) ->
 
 display: (output) ->
     split = output.split ' '
-    return split[0]
+    charge = split[0]
+    if charge == "100"
+      charge="99"
+    return charge
 
 icon: (output) =>
   split = output.split ' '
@@ -42,6 +44,6 @@ style: """
   text-overflow: ellipsis
   font: 13px Input
   top: 3px
-  right: 174px
+  right: 180px
   color: #d3d3d3
 """

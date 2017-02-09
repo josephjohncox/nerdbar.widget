@@ -4,7 +4,6 @@ refreshFrequency: 3600000 # 1h
 
 render: (output) ->
   """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="cal"
     <span></span>
     <span class="icon"></span>

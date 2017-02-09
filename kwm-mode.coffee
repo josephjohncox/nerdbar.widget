@@ -4,7 +4,6 @@ refreshFrequency: 5000 # ms
 
 render: (output) ->
   """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="kwm-mode"
     <span></span>
     <span class="icon"></span>

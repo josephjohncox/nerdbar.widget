@@ -1,7 +1,9 @@
 refreshFrequency: false
 
 render: (output) ->
-  ""
+  """
+  <link rel="stylesheet" href="./nerdbar.widgets/assets/font-awesome/css/font-awesome.min.css" />
+  """
 
 style: """
   top: 0

@@ -4,7 +4,6 @@ refreshFrequency: 500
 
 render: (output) ->
   """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="ac"
     <span></span>
     <span class="icon"></span>
@@ -25,6 +24,8 @@ icon: (output) =>
     else if output == "crisidev_web\n"
         "fa-firefox"
     else if output == "amzn_irssi\n"
+        "fa-amazon"
+    else if output == "amzn_sim\n"
         "fa-amazon"
     else if output == "amzn_web\n"
         "fa-firefox"
