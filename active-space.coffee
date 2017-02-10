@@ -19,11 +19,11 @@ update: (output, el) ->
 icon: (output) =>
     return if output == "terminal\n"
         "fa-terminal"
-    else if output == "crisidev_irssi\n"
+    else if output == "crisidev_irc\n"
         "fa-commenting"
     else if output == "crisidev_web\n"
         "fa-firefox"
-    else if output == "amzn_irssi\n"
+    else if output == "amzn_irc\n"
         "fa-amazon"
     else if output == "amzn_sim\n"
         "fa-amazon"
