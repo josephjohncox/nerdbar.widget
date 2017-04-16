@@ -1,6 +1,6 @@
 command: "$HOME/.bin/kwm-profile"
 
-refreshFrequency: 5000 # ms
+refreshFrequency: 60000 # ms
 
 render: (output) ->
   """
@@ -17,7 +17,7 @@ update: (output, el) ->
     $icon.addClass("fa fa-desktop")
 
 style: """
-  font-family: Lucida Console, Monaco, monospace
+  font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
   color: #d3d3d3

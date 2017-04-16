@@ -1,6 +1,6 @@
 command: "$HOME/.bin/osx-cpu-temp"
 
-refreshFrequency: 5000 # ms
+refreshFrequency: 30000 # ms
 
 render: (output) ->
   """
@@ -17,11 +17,12 @@ update: (output, el) ->
     $icon.addClass("fa fa-thermometer-half")
 
 style: """
+  font-family: Inconsolata-dz
   font-family: Lucida Console, Monaco, monospace
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 400px
+  right: 403px
   top: 3px
 """

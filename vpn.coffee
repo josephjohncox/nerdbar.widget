@@ -1,6 +1,6 @@
-command: "ip a |grep utun0 || echo 'none'"
+command: "/usr/local/bin/ip a |grep utun1 || echo 'none'"
 
-refreshFrequency: 10000 # ms
+refreshFrequency: 30000 # ms
 
 render: (output) ->
   """
@@ -22,11 +22,11 @@ icon: (output) ->
         "fa-globe"
 
 style: """
-  font-family: Lucida Console, Monaco, monospace
+  font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 287px
+  right: 290px
   top: 3px
 """

@@ -1,6 +1,6 @@
-command: "osascript -e 'get volume settings' |awk '{print $2\" \"$8}' |cut -d':' -f2,3 |sed 's/, muted:/ /'"
+command: "osascript -e 'get volume settings' 2> /dev/null |awk '{print $2\" \"$8}' |cut -d':' -f2,3 |sed 's/, muted:/ /'"
 
-refreshFrequency: 5000 # ms
+refreshFrequency: 30000 # ms
 
 render: (output) ->
   """
@@ -28,12 +28,12 @@ icon: (output) =>
       "fa-volume-down"
 
 style: """
-  font-family: Lucida Console, Monaco, monospace
+  font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
   font-weight: Bold
-  right: 233px
+  right: 236px
   top: 3px
 """

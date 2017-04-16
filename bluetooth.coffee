@@ -1,6 +1,6 @@
-command: "blueutil status |awk '{print $2}'"
+command: "/usr/local/bin/blueutil status |awk '{print $2}'"
 
-refreshFrequency: 10000
+refreshFrequency: 30000
 
 render: (output) ->
   """
@@ -22,11 +22,11 @@ icon: (output) ->
         "fa-bluetooth"
 
 style: """
-  font-family: Lucida Console, Monaco, monospace
+  font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 270px
+  right: 273px
   top: 3px
 """

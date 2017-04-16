@@ -1,6 +1,6 @@
 command: "echo $(/usr/local/bin/kwmc query space active tag)"
 
-refreshFrequency: 500
+refreshFrequency: 1000
 
 render: (output) ->
   """
@@ -19,7 +19,7 @@ update: (output, el) ->
 style: """
   position: absolute
   text-align: center
-  font-family: Lucida Console, Monaco, monospace
+  font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   color: #d3d3d3
   font: 13px Input

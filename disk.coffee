@@ -1,6 +1,6 @@
 command: "ESC=$(printf \"\e\"); df -h / |tail -n+2 | awk '{print $5}'"
 
-refreshFrequency: 60000
+refreshFrequency: 3600000
 
 render: (output) ->
   """
@@ -17,11 +17,11 @@ update: (output, el) ->
     $icon.addClass("fa fa-bars")
 
 style: """
-  font-family: Lucida Console, Monaco, monospace
+  font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 305px
+  right: 308px
   top: 3px
 """

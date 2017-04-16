@@ -1,6 +1,6 @@
 command: "/usr/local/bin/kwmc query space active name"
 
-refreshFrequency: 500
+refreshFrequency: 1000
 
 render: (output) ->
   """
@@ -31,7 +31,11 @@ icon: (output) =>
         "fa-firefox"
     else if output == "email\n"
         "fa-envelope"
+    else if output == "mutt\n"
+        "fa-envelope"
     else if output == "calendar\n"
+        "fa-calendar"
+    else if output == "calcurse\n"
         "fa-calendar"
     else if output == "biba\n"
         "fa-comments"
@@ -39,7 +43,7 @@ icon: (output) =>
         "fa-superpowers"
 
 style: """
-  font-family: Lucida Console, Monaco, monospace
+  font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
   color: #d3d3d3

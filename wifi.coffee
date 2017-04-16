@@ -1,6 +1,6 @@
 command: "networksetup -getairportnetwork en0 |head -n +1 |cut -c 24-"
 
-refreshFrequency: 5000 # ms
+refreshFrequency: 30000 # ms
 
 render: (output) ->
   """
@@ -24,11 +24,11 @@ icon: (output) =>
     return "fa-wifi"
 
 style: """
-  font-family: Lucida Console, Monaco, monospace
+  font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 250px
+  right: 253px
   top: 3px
 """

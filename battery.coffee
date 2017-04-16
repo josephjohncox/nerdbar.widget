@@ -1,6 +1,6 @@
 command: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1,2 -d';' |sed 's/%;//'"
 
-refreshFrequency: 60000
+refreshFrequency: 120000
 
 render: (output) ->
   """
@@ -39,11 +39,11 @@ icon: (output) =>
     "fa-battery-empty"
 
 style: """
-  font-family: Lucida Console, Monaco, monospace
+  font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
   font: 13px Input
   top: 3px
-  right: 180px
+  right: 183px
   color: #d3d3d3
 """

@@ -1,6 +1,6 @@
 command: "ESC=$(printf \"\e\"); ps -A -o %mem | awk '{s+=$1} END {a=sprintf(\"%.0f\", s); print a \"%\"}'"
 
-refreshFrequency: 5000 # ms
+refreshFrequency: 30000 # ms
 
 render: (output) ->
   """
@@ -17,11 +17,11 @@ update: (output, el) ->
     $icon.addClass("fa fa-pie-chart")
 
 style: """
-  font-family: Lucida Console, Monaco, monospace
+  font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 353px
+  right: 356px
   top: 3px
 """
