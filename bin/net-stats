@@ -1,4 +1,5 @@
 #!/bin/bash
+
 function getBytes {
     netstat -w1 > $HOME/.network.out & sleep 1.5; kill $!;
 }
