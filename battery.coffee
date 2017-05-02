@@ -1,4 +1,4 @@
-command: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1,2 -d';' |sed 's/%;//'"
+command: "pmset -g batt | egrep '([0-9]+\%).*' -o|  cut -f1,2 -d';' |sed 's/%;//'"
 
 refreshFrequency: 120000
 
@@ -26,8 +26,13 @@ display: (output) ->
 
 icon: (output) =>
   split = output.split ' '
+
   charge = split[0]
-  return if charge > 90
+  status = split[1]
+
+  return if status in ["charging\n", "charged\n"]
+    "fa-plug"
+  else if charge > 90
     "fa-battery-full"
   else if charge > 70
     "fa-battery-three-quarters"
