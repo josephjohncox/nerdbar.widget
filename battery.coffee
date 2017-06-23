@@ -1,12 +1,12 @@
 command: "pmset -g batt | egrep '([0-9]+\%).*' -o|  cut -f1,2 -d';' |sed 's/%;//'"
 
-refreshFrequency: 120000
+refreshFrequency: 240000
 
 render: (output) ->
   """
-  <div class="battery"
-    <span></span>
+  <div class="battery">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 

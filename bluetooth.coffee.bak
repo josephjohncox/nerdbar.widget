@@ -1,12 +1,12 @@
 command: "/usr/local/bin/blueutil status |awk '{print $2}'"
 
-refreshFrequency: 30000
+refreshFrequency: 300000
 
 render: (output) ->
   """
-  <div class="bluetooth"
-    <span></span>
+  <div class="bluetooth">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 

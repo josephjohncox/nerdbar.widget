@@ -4,9 +4,9 @@ refreshFrequency: 60000 # ms
 
 render: (output) ->
   """
-  <div class="kwm-mode"
-    <span></span>
+  <div class="kwm-mode">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 

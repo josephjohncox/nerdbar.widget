@@ -4,9 +4,9 @@ refreshFrequency: 5000 # ms
 
 render: (output) ->
   """
-  <div class="net"
-    <span></span>
+  <div class="net">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 

@@ -5,8 +5,8 @@ refreshFrequency: 30000 # ms
 render: (output) ->
   """
   <div class="vol">
-    <span></span>
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 

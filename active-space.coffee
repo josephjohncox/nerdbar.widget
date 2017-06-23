@@ -1,44 +1,46 @@
-command: "/usr/local/bin/kwmc query space active name"
+command: "$HOME/.bin/kwm-spaces"
 
-refreshFrequency: 1000
+refreshFrequency: 250
 
 render: (output) ->
   """
-  <div class="ac"
-    <span></span>
+  <div class="ac">
     <span class="icon"></span>
+    <span class="title"></span>
+    <span class="icon2"></span>
+    <span class="mode"></span>
   </div>
   """
 
 update: (output, el) ->
-    $(".ac span:first-child", el).text("  #{output}")
-    $icon = $(".ac span.icon", el)
-    $icon.removeClass().addClass("icon")
-    $icon.addClass("fa #{@icon(output)}")
+  data      = JSON.parse(output)
+  spaceName = data.spaceName
+  spaceID   = data.spaceID
+  khdMode   = data.khdMode
+  $(".ac span.title", el).text(" #{spaceID}:#{spaceName}")
+  $icon = $(".ac span.icon", el)
+  $icon.removeClass().addClass("icon")
+  $icon.addClass("fa #{@icon(spaceName)}")
+  $icon2 = $(".ac span.icon2", el)
+  $icon2.removeClass().addClass("icon2")
+  $icon2.addClass("fa fa-desktop")
+  $(".ac span.mode", el).text("[#{khdMode}]")
 
 icon: (output) =>
-    return if output == "terminal\n"
+    return if output == "terminal"
         "fa-terminal"
-    else if output == "crisidev_irc\n"
-        "fa-commenting"
-    else if output == "crisidev_web\n"
-        "fa-firefox"
-    else if output == "amzn_irc\n"
-        "fa-amazon"
-    else if output == "amzn_sim\n"
-        "fa-amazon"
-    else if output == "amzn_web\n"
-        "fa-firefox"
-    else if output == "email\n"
+    else if output == "web"
+        "fa-chrome"
+    else if output == "email"
         "fa-envelope"
-    else if output == "mutt\n"
-        "fa-envelope"
-    else if output == "calendar\n"
-        "fa-calendar"
-    else if output == "calcurse\n"
-        "fa-calendar"
-    else if output == "biba\n"
-        "fa-comments"
+    else if output == "chats"
+        "fa-slack"
+    else if output == "emacs"
+        "fa-space-shuttle"
+    else if output == "pdf"
+        "fa-file-pdf-o"
+    else if output == "music"
+        "fa-music"
     else
         "fa-superpowers"
 
@@ -53,4 +55,7 @@ style: """
   overflow: hidden
   top: 3px
   width: auto
+
+  .icon2
+    margin: 0 0 0 5px
 """

@@ -4,9 +4,9 @@ refreshFrequency: 3600000 # 1h
 
 render: (output) ->
   """
-  <div class="cal"
-    <span></span>
+  <div class="cal">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 

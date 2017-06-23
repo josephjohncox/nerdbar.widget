@@ -4,9 +4,9 @@ refreshFrequency: 3600000
 
 render: (output) ->
   """
-  <div class="disk"
-    <span></span>
+  <div class="disk">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 
@@ -22,6 +22,6 @@ style: """
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 308px
+  right: 273px
   top: 3px
 """

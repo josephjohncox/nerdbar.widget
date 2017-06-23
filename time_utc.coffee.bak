@@ -1,20 +1,20 @@
-command: "date -u +\"%a %d %b\""
+command: "date -u +\"%H:%M:%S %Z\""
 
-refreshFrequency: 3600000 # 1h
+refreshFrequency: 5000 # ms
 
 render: (output) ->
   """
-  <div class="cal"
-    <span></span>
+  <div class="time">
     <span class="icon"></span>
+    UTC <span></span>
   </div>
   """
 
 update: (output, el) ->
-    $(".cal span:first-child", el).text("  #{output}")
-    $icon = $(".cal span.icon", el)
+    $(".time span:first-child", el).text("  #{output}")
+    $icon = $(".time span.icon", el)
     $icon.removeClass().addClass("icon")
-    $icon.addClass("fa fa-calendar")
+    $icon.addClass("fa fa-clock-o")
 
 style: """
   font-family: Inconsolata-dz
@@ -22,6 +22,7 @@ style: """
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 120px
+  font-weight: Bold
+  right: 10px
   bottom: 3px
 """

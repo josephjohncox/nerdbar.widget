@@ -4,9 +4,9 @@ refreshFrequency: 30000 # ms
 
 render: (output) ->
   """
-  <div class="vpn"
-    <span></span>
+  <div class="vpn">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 

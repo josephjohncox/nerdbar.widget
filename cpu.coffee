@@ -4,9 +4,9 @@ refreshFrequency: 5000
 
 render: (output) ->
   """
-  <div class="cpu"
-    <span></span>
+  <div class="cpu">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 
@@ -22,6 +22,6 @@ style: """
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 450px
+  right: 373px
   top: 3px
 """

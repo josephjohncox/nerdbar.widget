@@ -4,14 +4,14 @@ refreshFrequency: 1000
 
 render: (output) ->
   """
-  <div class="foc"
-    <span></span>
+  <div class="foc">
     <span class="icon"></span>
+    <span class="title"></span>
   </div>
   """
 
 update: (output, el) ->
-    $(".foc span:first-child", el).text("  #{output}")
+    $(".foc span.title", el).text(" #{output}")
     $icon = $(".foc span.icon", el)
     $icon.removeClass().addClass("icon")
     $icon.addClass("fa fa-bullseye")
@@ -26,6 +26,12 @@ style: """
   height: 16px
   overflow: hidden
   text-overflow: ellipsis
-  bottom: 3px
+  top: 3px
   width: 100%
+
+  .foc
+    width: 300px
+    margin: 0 auto
+    text-overflow: ellipsis
+    overflow: hidden
 """

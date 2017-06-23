@@ -4,9 +4,9 @@ refreshFrequency: 30000 # ms
 
 render: (output) ->
   """
-  <div class="wifi"
-    <span></span>
+  <div class="wifi">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 

@@ -4,9 +4,9 @@ refreshFrequency: 30000 # ms
 
 render: (output) ->
   """
-  <div class="mem"
-    <span></span>
+  <div class="mem">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 
@@ -22,6 +22,6 @@ style: """
   text-overflow: ellipsis
   color: #d3d3d3
   font: 13px Input
-  right: 356px
+  right: 322px
   top: 3px
 """

@@ -4,9 +4,9 @@ refreshFrequency: 30000 # ms
 
 render: (output) ->
   """
-  <div class="temp"
-    <span></span>
+  <div class="temp">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 

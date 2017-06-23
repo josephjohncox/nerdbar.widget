@@ -1,12 +1,12 @@
-command: "date +\"%H:%M:%S\""
+command: "date +\"%l:%M %p\""
 
-refreshFrequency: 5000 # ms
+refreshFrequency: 10000 # ms
 
 render: (output) ->
   """
-  <div class="time"
-    <span></span>
+  <div class="time">
     <span class="icon"></span>
+    <span></span>
   </div>
   """
 
