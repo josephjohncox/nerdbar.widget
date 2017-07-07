@@ -1,18 +1,18 @@
 command: "pmset -g batt | egrep '([0-9]+\%).*' -o|  cut -f1,2 -d';' |sed 's/%;//'"
 
-refreshFrequency: 240000
+refreshFrequency: '4m'
 
 render: (output) ->
   """
   <div class="battery">
     <span class="icon"></span>
-    <span></span>
+    <span class="text"></span>
   </div>
   """
 
 update: (output, el) ->
     bat = parseInt(output)
-    $(".battery span:first-child", el).text("  #{@display(output)}%")
+    $(".battery span.text", el).text("  #{@display(output)}%")
     $icon = $(".battery span.icon", el)
     $icon.removeClass().addClass("icon")
     $icon.addClass("fa #{@icon(output)}")
@@ -44,6 +44,7 @@ icon: (output) =>
     "fa-battery-empty"
 
 style: """
+  position: absolute
   font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis

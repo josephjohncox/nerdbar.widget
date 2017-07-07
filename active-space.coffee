@@ -1,6 +1,6 @@
 command: "$HOME/.bin/kwm-spaces"
 
-refreshFrequency: 250
+refreshFrequency: '1s'
 
 render: (output) ->
   """
@@ -45,6 +45,7 @@ icon: (output) =>
         "fa-superpowers"
 
 style: """
+  position: absolute
   font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis

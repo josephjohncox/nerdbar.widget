@@ -1,6 +1,6 @@
 command: 'cat \"$HOME/Library/Application Support/Google\ Play\ Music\ Desktop\ Player/json_store/playback.json\"'
 
-refreshFrequency: 8000 # ms
+refreshFrequency: '8s' # ms
 
 render: (output) ->
   """
@@ -36,6 +36,7 @@ icon: (status) =>
         # "fa-times-circle-o"
 
 style: """
+  position: absolute
   -webkit-font-smoothing: antialiased
   font-family: Inconsolata-dz
   color: #d3d3d3

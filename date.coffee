@@ -1,22 +1,23 @@
 command: "date +\"%a %d %b\""
 
-refreshFrequency: 3600000 # 1h
+refreshFrequency: '1h' # 1h
 
 render: (output) ->
   """
   <div class="cal">
     <span class="icon"></span>
-    <span></span>
+    <span class="text"></span>
   </div>
   """
 
 update: (output, el) ->
-    $(".cal span:first-child", el).text("  #{output}")
+    $(".cal span.text", el).text("  #{output}")
     $icon = $(".cal span.icon", el)
     $icon.removeClass().addClass("icon")
     $icon.addClass("fa fa-calendar")
 
 style: """
+  position: absolute
   font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis

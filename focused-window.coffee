@@ -1,20 +1,17 @@
 command: "echo $(/usr/local/bin/kwmc query space active tag)"
 
-refreshFrequency: 1000
+refreshFrequency: '1s'
 
 render: (output) ->
   """
   <div class="foc">
-    <span class="icon"></span>
+    <span class="icon fa fa-bullseye"></span>
     <span class="title"></span>
   </div>
   """
 
 update: (output, el) ->
     $(".foc span.title", el).text(" #{output}")
-    $icon = $(".foc span.icon", el)
-    $icon.removeClass().addClass("icon")
-    $icon.addClass("fa fa-bullseye")
 
 style: """
   position: absolute

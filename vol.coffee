@@ -1,12 +1,11 @@
 command: "osascript -e 'get volume settings' 2> /dev/null |awk '{print $2\" \"$8}' |cut -d':' -f2,3 |sed 's/, muted:/ /'"
 
-refreshFrequency: 30000 # ms
+refreshFrequency: '20s' # ms
 
 render: (output) ->
   """
   <div class="vol">
     <span class="icon"></span>
-    <span></span>
   </div>
   """
 
@@ -28,6 +27,7 @@ icon: (output) =>
       "fa-volume-down"
 
 style: """
+  position: absolute
   font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis

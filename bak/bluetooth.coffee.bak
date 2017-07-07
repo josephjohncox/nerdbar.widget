@@ -1,6 +1,6 @@
 command: "/usr/local/bin/blueutil status |awk '{print $2}'"
 
-refreshFrequency: 300000
+refreshFrequency: false
 
 render: (output) ->
   """

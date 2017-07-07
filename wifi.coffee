@@ -1,12 +1,11 @@
 command: "networksetup -getairportnetwork en0 |head -n +1 |cut -c 24-"
 
-refreshFrequency: 30000 # ms
+refreshFrequency: '30s' # ms
 
 render: (output) ->
   """
   <div class="wifi">
     <span class="icon"></span>
-    <span></span>
   </div>
   """
 
@@ -24,6 +23,7 @@ icon: (output) =>
     return "fa-wifi"
 
 style: """
+  position: absolute
   font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis

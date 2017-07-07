@@ -1,22 +1,23 @@
 command: "date +\"%l:%M %p\""
 
-refreshFrequency: 10000 # ms
+refreshFrequency: '15s' # ms
 
 render: (output) ->
   """
   <div class="time">
     <span class="icon"></span>
-    <span></span>
+    <span class="text"></span>
   </div>
   """
 
 update: (output, el) ->
-    $(".time span:first-child", el).text("  #{output}")
+    $(".time span.text", el).text("  #{output}")
     $icon = $(".time span.icon", el)
     $icon.removeClass().addClass("icon")
     $icon.addClass("fa fa-clock-o")
 
 style: """
+  position: absolute
   font-family: Inconsolata-dz
   -webkit-font-smoothing: antialiased
   text-overflow: ellipsis
